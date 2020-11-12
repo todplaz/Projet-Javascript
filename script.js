@@ -7,6 +7,8 @@ let surname = prompt("");
 console.log("Bonjour " + surname); 
 */
 
+
+
 //script_2.js
 /* 
 let n = prompt("De quel nombre veux-tu calculer la factorielle ?")
@@ -21,6 +23,9 @@ function factorial(n){
 answer = factorial(n)
 console.log("Le résultat est :"+ answer); 
 */
+
+
+
 //script_3.js
 /*
 let k = prompt ("Combien de marches souhaitez-vous grimper ?");
@@ -34,8 +39,11 @@ for (var i = 1; i <= k; i++){
     console.log("\n");
 }
 */
-//script_4.js
 
+
+
+//script_4.js
+/*
 const entrepreneurs = [
     { first: 'Steve', last: 'Jobs', year: 1955 },
     { first: 'Oprah', last: 'Winfrey', year: 1954 },
@@ -56,11 +64,15 @@ const entrepreneurs = [
     { first: 'Marc', last: 'Andreessen', year: 1971 },
     { first: 'Peter', last: 'Thiel', year: 1967 }
   ];
+  */
+
+
  //Nés dans les années 70
   /*
 const oldEntrepreneurs = entrepreneurs.filter(obj => obj.year >= 1970 && obj.year <= 1979);
 console.log(oldEntrepreneurs)
 */
+
 
 //Noms et prénoms des entrepreneurs
 /* 
@@ -68,12 +80,14 @@ let name = entrepreneurs.map(x => ({first: x.first, last: x.last}));
 console.log(name);
 */
 
+
 //Age actuel
 /*
 for (let age in entrepreneurs){
     console.log("l'age actuel de :"+ entrepreneurs[age].first + " est :"+ (2000 - entrepreneurs[age].year));
 }
 */
+
 
 //Ordre alphabetique
 /*
@@ -85,8 +99,11 @@ entrepreneurs.sort(function(a, b){
 console.log(entrepreneurs);
 */
 
+
+
 //script_5.js
 
+/*
 const books = [
     { title: 'Gatsby le magnifique', id: 133712, rented: 39 },
     { title: 'A la recherche du temps,perdu', id: 237634, rented: 28 },
@@ -101,6 +118,9 @@ const books = [
     { title: 'Voyage au centre de la Terre', id: 4656388, rented: 38 },
     { title: 'Guerre et Paix', id: 748147, rented: 19 }
   ];
+*/
+
+
 
 //Libres empruntés au moins une fois
 /*
@@ -110,13 +130,46 @@ console.log(empruntMax[location].title +" a été emprunté " + empruntMax[locat
 }
 */
 
+
+
 //Le livre le plus emprunté
-var maxValue = Math.max.apply(null,  
-    books.map(function(o) { return o.rented; })); 
- 
-  console.log("Le livre le plus emprunté est :" + maxValue); 
+/*
+books.sort(function compare(a, b) {
+  if (a.rented > b.rented)
+     return -1;
+  if (a.rented < b.rented)
+     return 1;
+  return 0;
+});
+console.log("Le livre le plus emprunté est :" + books[0]);
+*/
 
 
 
- 
+//Le livre le moins emprunté
+/*
+books.sort(function compare(a, b) {
+  if (a.rented < b.rented)
+     return -1;
+  if (a.rented > b.rented)
+     return 1;
+  return 0;
+});
+console.log("Le livre le moins emprunté est :" + books[0]);
+*/
 
+
+
+//Le livre avec l'index 873495
+/*
+let livre = books.find(index => index.id === 873495);
+console.log("Le livre avec l'ID: 873495:" + livre);
+*/
+
+
+/*
+//Suppression du livre avec l'ID: 133712
+let booksDelete = books.find(element => element.id = 133712);
+books.splice(booksDelete, 1);
+console.log("Après suppression du livre avec l'ID: 133712 on obtient :" + books);
+*/
